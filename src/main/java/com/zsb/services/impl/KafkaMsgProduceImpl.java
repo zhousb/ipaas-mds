@@ -1,6 +1,7 @@
 package com.zsb.services.impl;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -49,6 +50,7 @@ public class KafkaMsgProduceImpl implements IMsgProduce{
 	public KafkaMsgProduceImpl(MdsParam param){
 		
 		this.param = param;	
+		init();
 	}
 	
 	@Override
@@ -80,7 +82,7 @@ public class KafkaMsgProduceImpl implements IMsgProduce{
 				brokers[0].length());
 		info = KafkaInfoTools.findLeader(bks, new Integer(port).intValue(),
 				topic);
-		
+		topicInfo = new HashMap<String,String>();
 		for(Entry<Integer,PartitionMetadata> entry:info.entrySet()){
 			topicInfo.put(String.valueOf(entry.getKey()),String.valueOf(entry.getKey()));
 		}
