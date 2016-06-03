@@ -18,7 +18,7 @@ public class MsgProduceUtils {
 	private static Map<String,IMsgProduce> senders = new ConcurrentHashMap<String,IMsgProduce>();
 	
 	
-	public static IMsgProduce getClient(MdsParam param){
+	public static IMsgProduce getProducer(MdsParam param){
 		
 		if(senders.containsKey(param.calcurateKey())){
 			IMsgProduce sender = senders.get(param.calcurateKey());
