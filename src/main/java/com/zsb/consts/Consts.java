@@ -17,7 +17,7 @@ public class Consts {
 		
 		public static final String REQUEST_REQUIRED_ACKS = "request.required.acks";
 		
-		
+		public static final String CONSUMER_THREAD_COUNT = "consumer.thread.count";
 		
 	}
 	

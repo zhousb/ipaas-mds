@@ -1,6 +1,12 @@
 package com.zsb.services;
 
-public class IMsgConsumer {
+public interface IMsgConsumer {
+
+	void init();
+
+	void close();
+
+	boolean isAlive();
 	
 	
 }
