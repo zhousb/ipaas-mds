@@ -2,6 +2,10 @@ package com.zsb.utils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +25,10 @@ public class MsgConsumerUtils {
 	private static final Logger LOG = LoggerFactory.getLogger(MsgConsumerUtils.class);
 	
 	
-	private static Map<String,IMsgConsumer> consumers = new HashMap<String,IMsgConsumer>();
+	
+	private ExecutorService excutor = Executors.newScheduledThreadPool(1);
+	
+	private static Map<String,IMsgConsumer> consumers = new ConcurrentHashMap<String,IMsgConsumer>();
 	
 	
 	public static IMsgConsumer getConsumer(MdsParam param){
