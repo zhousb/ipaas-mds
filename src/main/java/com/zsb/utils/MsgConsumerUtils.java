@@ -38,6 +38,9 @@ public class MsgConsumerUtils {
 			if(consumer.isAlive()){
 				return consumer;
 			}
+			else{
+				consumers.remove(param.calcurateKey());
+			}
 		}
 		IMsgConsumer consumer = new KafkaMsgConsumerImpl(param);
 		consumers.put(param.calcurateKey(), consumer);
