@@ -82,6 +82,7 @@ public class KafkaMsgConsumerImpl implements IMsgConsumer{
 	 * 获取消费流(根据线程数返回消费流)
 	 * @return
 	 */
+	@Override
 	public List<KafkaStream<byte[], byte[]>> getConsumerStream(){
 		ConsumerConnector con = Consumer.createJavaConsumerConnector(configer);
 		Map<String,Integer> topicCountMap = new HashMap<String,Integer>();

@@ -20,6 +20,8 @@ public class MdsParam implements Serializable{
 	private String pwd;
 	private String serviceId;
 	
+	private String strategy;
+	
 	private Map<String,String> conf;
 	
 	public String getUserName() {
@@ -53,6 +55,7 @@ public class MdsParam implements Serializable{
 		buf.append(address).append("_");
 		buf.append(userName).append("_");
 		buf.append(serviceId).append("_");
+		buf.append(strategy);
 		return buf.toString();
 	}
 	public Map<String,String> getConf() {
@@ -60,6 +63,12 @@ public class MdsParam implements Serializable{
 	}
 	public void setConf(Map<String,String> conf) {
 		this.conf = conf;
+	}
+	public String getStrategy() {
+		return strategy;
+	}
+	public void setStrategy(String strategy) {
+		this.strategy = strategy;
 	}
 	
 }

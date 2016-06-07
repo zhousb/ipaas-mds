@@ -13,6 +13,7 @@ import com.google.gson.Gson;
 import com.zsb.consts.Consts;
 import com.zsb.model.MdsParam;
 import com.zsb.services.IMsgProduce;
+import com.zsb.utils.MsgConsumerUtils;
 import com.zsb.utils.MsgProduceUtils;
 
 public class Test {
@@ -43,7 +44,11 @@ public class Test {
 	}
 
 	public static void testConsumer() {
-
+		
+		MdsParam param = new MdsParam();
+		MsgConsumerUtils.getConsumer(param).getConsumerStream();
+		
+		MsgConsumerUtils.getKafkaConsumer(param).getConsumerStream();
 	}
 
 	public static void test() throws InterruptedException {
@@ -130,7 +135,7 @@ class VwThreadTest extends Thread{
 	public void run() {
 		
 		for(Entry entry:Test.map.entrySet()){
-			
+			//Test.map.remove(entry.getKey());
 		}
 		
 		latch.countDown();

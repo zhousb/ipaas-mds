@@ -19,6 +19,8 @@ public class Consts {
 		
 		public static final String CONSUMER_THREAD_COUNT = "consumer.thread.count";
 		
+		
+		public static final String STRATEGY_KAFKA= "kafka";
 	}
 	
 	

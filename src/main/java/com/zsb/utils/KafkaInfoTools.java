@@ -76,6 +76,21 @@ public class KafkaInfoTools {
 		}
 		return map;
 	}
+	
+	
+	public static void createTopic(){
+		
+	}
+	
+	public static void listTopic(){
+		
+	}
+	
+	public static void deleteTopic(){
+		
+	}
+	
+	
 	public static void main(String[] args) {
 		
 		String topic = "mytest";
@@ -102,4 +117,6 @@ public class KafkaInfoTools {
 		}
 		System.out.println("总和："+sum);
 	}
+	
+	
 }

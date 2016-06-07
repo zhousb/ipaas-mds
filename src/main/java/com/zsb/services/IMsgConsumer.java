@@ -1,5 +1,7 @@
 package com.zsb.services;
 
+import java.util.List;
+
 public interface IMsgConsumer {
 
 	void init();
@@ -8,5 +10,5 @@ public interface IMsgConsumer {
 
 	boolean isAlive();
 	
-	
+	List<?> getConsumerStream();
 }
